@@ -46,5 +46,4 @@ class PerguntaApp extends StatefulWidget{
   _PerguntaAppState createState() {
     return _PerguntaAppState();
   }
-//jsut a test
 }
