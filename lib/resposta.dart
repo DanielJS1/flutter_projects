@@ -11,9 +11,10 @@ class Resposta extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      margin: const EdgeInsets.all(3),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: Colors.blue,
+          primary: Color.fromARGB(255, 0, 0, 0),
           textStyle: const TextStyle(color: Colors.white),
         ),
         child: Text(texto),
@@ -21,5 +22,4 @@ class Resposta extends StatelessWidget {
       ),
     );
   }
-  //hhhhh
 }
