@@ -40,7 +40,9 @@ class _PerguntaAppState extends State<PerguntaApp> {
 
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: const Color.fromARGB(31, 255, 255, 255),
         appBar: AppBar(
+          backgroundColor: Colors.black87,
           title: const Text("Perguntas"),
         ),
         body: Column(
