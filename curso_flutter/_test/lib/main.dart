@@ -42,30 +42,32 @@ class _MyHomePageState extends State<MyHomePage> {
     return DefaultTabController(length: 3, 
     child: Scaffold(
       appBar: AppBar(
-        bottom: const TabBar(
+          title: Text(widget.title),
+            //flexibleSpace: const Image(
+              //image: AssetImage("images/logo.png"),
+              //width: 30, 
+              //height: 30),
+              
+          bottom: const TabBar(
           tabs: [
             Tab(icon: Icon(Icons.text_snippet)),
             Tab(icon: Icon(Icons.audiotrack)),
             Tab(icon: Icon(Icons.ondemand_video_outlined))
           ],
           ),
-          title: Text(widget.title),
         ),
 
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+
+              Image.asset("images/album.jpg", width: 400, height: 400),
+              
               const Text(
                 'Post Malone - Cooped Up with Roddy Ricch',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600, color: Colors.black),
                 textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 25),
-             Text(
-              '$_counter',
-              style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.blueGrey),
-              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 25),
 
@@ -75,12 +77,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 Icon(Icons.skip_previous, color: Colors.black, size: 60),
                 Icon(Icons.pause_circle,color:Colors.green, size: 100),
                 Icon(Icons.skip_next,color: Colors.black, size: 60)
-                ],
-              )
-            ],
-          ),
-        )
-      ),
+                ],)
+             ],
+           ),
+          )
+        ),
     );
   }
 }
