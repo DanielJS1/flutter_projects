@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Test',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.green,
       ),
       home: const MyHomePage(title: 'App de teste!'),
     );
@@ -39,35 +39,47 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
+    return DefaultTabController(length: 3, 
+    child: Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Pressione o botão quantas vezes quiser! '
-              'Veja o contador:',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 108, 0, 129)),
-              textAlign: TextAlign.center,
+        bottom: const TabBar(
+          tabs: [
+            Tab(icon: Icon(Icons.text_snippet)),
+            Tab(icon: Icon(Icons.audiotrack)),
+            Tab(icon: Icon(Icons.ondemand_video_outlined))
+          ],
+          ),
+          title: Text(widget.title),
+        ),
+
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text(
+                'Pressione o botão quantas vezes quiser! Veja o contador:',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600, color: Colors.black),
+                textAlign: TextAlign.center,
             ),
             const SizedBox(height: 25),
-            Text(
+             Text(
               '$_counter',
               style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.blueGrey),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 25),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.skip_previous, color: Colors.black, size: 60),
+                Icon(Icons.pause_circle,color:Colors.green, size: 100),
+                Icon(Icons.skip_next,color: Colors.black, size: 60)
+                ],
+              )
+            ],
+          ),
+        )
       ),
     );
   }
