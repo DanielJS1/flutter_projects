@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const MyHomePage(title: 'App de teste!'),
+      home: const MyHomePage(title: 'Spotfera!'),
     );
   }
 }
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const Text(
-                'Pressione o botão quantas vezes quiser! Veja o contador:',
+                'Post Malone - Cooped Up with Roddy Ricch',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600, color: Colors.black),
                 textAlign: TextAlign.center,
             ),
