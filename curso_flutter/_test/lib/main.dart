@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'biblioteca.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Test',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        brightness: Brightness.dark, 
       ),
       home: const MyHomePage(title: 'Premium!'),
     );
@@ -46,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
           toolbarHeight: 88,
           actions: [
-          IconButton(onPressed: () => {}, icon: Icon(Icons.search)),
+          IconButton(onPressed: () => {}, icon: const Icon(Icons.search)),
           ],
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -77,13 +78,25 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
 
-              Image.asset("images/album.jpg", width: 400, height: 400),
+              ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.grey
+              ),
+              onPressed: (){
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const Biblioteca()));
+              },
+              child: const Text("Biblioteca"),
+            ),
+
+              Image.asset("images/album.jpg", width: 350, height: 350),
               
               const Text(
                 'Post Malone - Cooped Up with Roddy Ricch',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600, color: Colors.black),
                 textAlign: TextAlign.center,
             ),
+            
             const SizedBox(height: 25),
 
             Row(
