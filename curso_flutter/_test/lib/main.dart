@@ -14,10 +14,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const MyHomePage(title: 'Spotfera!'),
+      home: const MyHomePage(title: 'Premium!'),
     );
   }
 }
+
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -42,11 +44,24 @@ class _MyHomePageState extends State<MyHomePage> {
     return DefaultTabController(length: 3, 
     child: Scaffold(
       appBar: AppBar(
-          title: Text(widget.title),
-            //flexibleSpace: const Image(
-              //image: AssetImage("images/logo.png"),
-              //width: 30, 
-              //height: 30),
+          toolbarHeight: 88,
+          actions: [
+          IconButton(onPressed: () => {}, icon: Icon(Icons.search)),
+          ],
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+                  Image.asset(
+                 'images/logo.png',
+                  fit: BoxFit.cover,
+                  height: 35,
+              ),
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(widget.title),
+              )
+          ],
+        ),
               
           bottom: const TabBar(
           tabs: [
@@ -73,10 +88,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.skip_previous, color: Colors.black, size: 60),
-                Icon(Icons.pause_circle,color:Colors.green, size: 100),
-                Icon(Icons.skip_next,color: Colors.black, size: 60)
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                  IconButton(onPressed: () => {}, icon: const Icon(Icons.skip_previous, color: Colors.black, size: 50)),
+                    const Padding(
+                      padding: EdgeInsets.all(5),
+                  ),
+                  IconButton(onPressed: () => {}, icon: const Icon(Icons.play_circle, color: Colors.green, size: 70)),
+                    const Padding(
+                      padding: EdgeInsets.all(15),
+                  ),
+                  IconButton(onPressed: () => {}, icon: const Icon(Icons.skip_next, color: Colors.black, size: 50)),
+                  //ElevatedButton(onPressed: (){
+                   // print("lala");
+                  //}, 
+                  //style: ElevatedButton.styleFrom(
+                    //primary: Colors.purple
+                  //),
+                  //child: const Text("dasd"))
                 ],)
              ],
            ),
