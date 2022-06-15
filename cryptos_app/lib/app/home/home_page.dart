@@ -12,8 +12,8 @@ class HomePage extends StatelessWidget {
       ),
       body: const Center(
         child: Text(
-          'Cryptos Dio',
-          style: TextStyle(fontSize: 30),
+          'CryptosApp',
+          style: TextStyle(fontSize: 30, color: Colors.green),
         ),
       ),
     );
